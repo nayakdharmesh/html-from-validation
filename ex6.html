@@ -1,0 +1,81 @@
+<html>
+
+<body>
+    <center>
+    <form method="GET">
+        username:<input type="text" id="un" required><br><br> 
+        user Age:<input type="number" id="age" required><br><br> 
+        mobile number: <input type="number" id="no" required></br><br> 
+        emailo id:<input type="text" id="email" required><br><br> 
+        password:<input type="text" id="pass" required><br><br> 
+        confirm-password:<input type="text" id="cpass" required><br><br>
+            <input type="submit" value="submit" onsubmit="ch()" >
+            <input type="reset" value="reset">
+    </form><br>
+    <br>
+     <label>Your input: </label>
+             <table>
+                <tr>
+                    <td><span id='display1'></td>
+                </tr>
+                <tr>
+                    <td><span id='display2'></td>
+                </tr>
+                <tr>
+                    <td><span id='display3'></td>
+                </tr>
+                <tr>
+                    <td><span id='display4'></td>
+                </tr>
+                <tr>
+                    <td><span id='display5'></td>
+                </tr>
+             </table>
+    <script>
+            //var msg="";
+            var ch = function () {
+                //alert("hello dharmesh");
+                var un = document.getElementById("un").value;
+                var age = document.getElementById("age").value;
+                var no = document.getElementById("no").value;
+                var email = document.getElementById("email").value;
+                var pass = document.getElementById("pass").value;
+                var cpass = document.getElementById("cpass").value;
+                var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+                var passw = /^[A-Za-z]\w{7,14}$/;
+
+
+                if ( age > 1 || age < 100) {
+                    alert("please enter the valid age");
+                }
+
+                else if (no >= 0 || no <= 9) {
+                    alert("please enter the valid mobile no");
+                }
+
+                else if ( email.match(mailformat)) {
+                    alert("please enter the valid email address");
+                }
+
+                else if ( pass.match(passw)) {
+                    alert("please enter the valid password");
+                }
+
+                else if (pass != cpass) {
+                    alert("please enter the valid confirm-password");
+                }
+                else{
+                       document.getElementById('display1').innerHTML = un;
+                       document.getElementById('display2').innerHTML = age;
+                       document.getElementById('display3').innerHTML = no;
+                       document.getElementById('display4').innerHTML = email;
+                       document.getElementById('display5').innerHTML = pass;
+                }
+
+            }
+
+           
+        </script>
+            </center>
+</body>
+</html>
